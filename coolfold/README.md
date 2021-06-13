@@ -1,0 +1,26 @@
+# Coolfold
+
+Coolfold provides implementations of ~foldl~ and ~foldr~ functions.
+
+~fold~ is a function that takes a function, an accmulator, and a list, and returns a value.
+
+```math
+f: A \times B \rightarrow B
+fold: [A] \times B \times B^{A \times B} \rightarrow B
+fold: ([a], acc, f) \mapsto b
+```
+
+### Docs
+
+Documentation can be found at
+
+### Benchmarks
+
+Benchmarks can be run with
+`mix compile`
+`mix run benchmark.exs`
+
+### Tests
+
+Tests and doctests can be run with
+`mix test`

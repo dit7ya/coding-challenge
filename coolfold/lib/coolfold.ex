@@ -1,12 +1,15 @@
 defmodule Coolfold do
   @moduledoc """
-  The `Coolfold` module provides the foldl and foldr functions.
+  The `Coolfold` module provides the foldl and foldr functions for lists. It can be extended for other sequential types
+  such as ranges with slight modification to the core logic.
   """
 
   @doc """
   The `foldl` function takes a list of type `A`, an accumulator of type `B` ("starting value"), and a function
   `f: (A,B) -> B` and returns a value of type `B` by _folding from the left_. This is a tail recursive implementation of left fold which works
   for very big list inputs without stack overflow.
+
+  The accumulator is usually a value that acts an identity for the binary operator `f`, for example, `0` for summing.
 
   ## Examples
 
@@ -30,6 +33,7 @@ defmodule Coolfold do
   @doc """
   The `foldr` function is like the `foldl` function but _folds from the right_ instead. The results are different for non-associative functions.
   This implementation is not tail recursive and can cause stack overflows for very big input lists.
+
 
   ## Examples
 

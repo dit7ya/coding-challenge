@@ -2,7 +2,10 @@
 
 
 * Plan
-** Implement foldl and foldr
-** Documentation using ExDoc
-** Benchmarks using Benchee
-** Tests using ExUnit
+** DONE Implement foldl and foldr
+** DONE Documentation using ExDoc
+** DONE Benchmarks using Benchee
+** DONE Tests using ExUnit
+*** DONE Write more tests
+** DONE Talk about other list like structures
+** TODO Rewrite READMEs

@@ -5,9 +5,12 @@ Coolfold provides implementations of ~foldl~ and ~foldr~ functions.
 
 ~fold~ is a function that takes a function, an accmulator, and a list, and returns a value.
 
+#+begin_src latex
 $$f: A \times B \rightarrow B$$
 $$fold: [A] \times B \times B^{A \times B} \rightarrow B$$
 $$fold: ([a], acc, f) \mapsto b$$
+#+end_src
+
 
 
 

@@ -1,0 +1,8 @@
+#+TITLE: Taktile Fold
+
+
+* Plan
+** Implement foldl and foldr
+** Documentation using ExDoc
+** Benchmarks using Benchee
+** Tests using ExUnit

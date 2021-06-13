@@ -1,8 +1,10 @@
 # Coolfold
 
-Coolfold provides implementations of ~foldl~ and ~foldr~ functions.
+Coolfold provides implementations of `foldl` and `foldr` functions.
 
-~fold~ is a function that takes a function, an accmulator, and a list, and returns a value.
+`fold` is a function that takes a function, an accmulator, and a list, and returns a value by reducing the list using the given function.
+
+(Pretend the following is rendered as real Latex. Seems like there is no easy way to render \LaTex on Github READMEs, I wasted last twenty minutes and 4 commits on this.)
 
 ```math
 f: A \times B \rightarrow B
@@ -18,6 +20,7 @@ Documentation can be found at
 
 Benchmarks can be run with
 `mix compile`
+
 `mix run benchmark.exs`
 
 ### Tests

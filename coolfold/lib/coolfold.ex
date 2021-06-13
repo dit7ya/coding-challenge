@@ -25,10 +25,9 @@ defmodule Coolfold do
     acc
   end
 
-  def foldl([head| tail], acc, f) do
+  def foldl([head | tail], acc, f) do
     foldl(tail, f.(head, acc), f)
   end
-
 
   @doc """
   The `foldr` function is like the `foldl` function but _folds from the right_ instead. The results are different for non-associative functions.
@@ -49,8 +48,7 @@ defmodule Coolfold do
     acc
   end
 
-  def foldr([head| tail], acc, f) do
+  def foldr([head | tail], acc, f) do
     f.(head, foldr(tail, acc, f))
   end
-
 end

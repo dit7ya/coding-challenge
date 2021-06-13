@@ -1,27 +1,52 @@
 defmodule Coolfold do
   @moduledoc """
-  Documentation for `Coolfold`.
+  The `Coolfold` module provides the foldl and foldr functions.
   """
 
   @doc """
-  The fold function takes a list of type A, an accumulator of type B ("starting value"), and a function
-  $f: (A\times B) -> B$ and returns a value of type B.
-   world.
+  The `foldl` function takes a list of type `A`, an accumulator of type `B` ("starting value"), and a function
+  `f: (A,B) -> B` and returns a value of type `B` by _folding from the left_. This is a tail recursive implementation of left fold which works
+  for very big list inputs without stack overflow.
 
   ## Examples
 
-      iex> Coolfold.hello()
-      :world
+      iex> Coolfold.foldl([1,2,3,4], 0, fn x,y -> x+y end)
+      10
 
+      iex> Coolfold.foldl([1,2,3,4], 0, fn x,y -> x-y end)
+      2
   """
 
-  @spec fold([typeA], typeB, (typeA, typeB -> typeB)) :: typeB when typeA: var, typeB: var
-  def fold([], acc, _f) do
+  @spec foldl([typeA], typeB, (typeA, typeB -> typeB)) :: typeB when typeA: var, typeB: var
+  def foldl([], acc, _f) do
     acc
   end
 
-  def fold([head| tail], acc, f) do
-    fold(tail, f.(head, acc), f)
+  def foldl([head| tail], acc, f) do
+    foldl(tail, f.(head, acc), f)
+  end
+
+
+  @doc """
+  The `foldr` function is like the `foldl` function but _folds from the right_ instead. The results are different for non-associative functions.
+  This implementation is not tail recursive and can cause stack overflows for very big input lists.
+
+  ## Examples
+
+      iex> Coolfold.foldr([1,2,3,4], 0, fn x,y -> x+y end)
+      10
+
+      iex> Coolfold.foldr([1,2,3,4], 0, fn x,y -> x-y end)
+      -2
+  """
+
+  @spec foldr([typeA], typeB, (typeA, typeB -> typeB)) :: typeB when typeA: var, typeB: var
+  def foldr([], acc, _f) do
+    acc
+  end
+
+  def foldr([head| tail], acc, f) do
+    f.(head, foldr(tail, acc, f))
   end
 
 end

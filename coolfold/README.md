@@ -15,7 +15,8 @@ fold: ([a], acc, f) \mapsto b
 ### Docs
 
 Documentation can be found at [Coolfold — coolfold v0.1.0](https://coding-challenge-delta.vercel.app/Coolfold.html#summary) and can be generated with
-~mix docs~
+
+`mix docs`
 
 ### Benchmarks
 

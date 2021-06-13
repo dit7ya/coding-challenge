@@ -29,4 +29,13 @@ defmodule CoolfoldTest do
     assert Coolfold.foldr(1..100 |> Enum.to_list(), 1, fn x, y -> x * y end) ==
              List.foldr(1..100 |> Enum.to_list(), 1, fn x, y -> x * y end)
   end
+
+  test "foldr works on a list of strings" do
+    assert Coolfold.foldr(
+             ["this", "is", "how", "you", "would", "unword", "a", "list", "of", "strings"],
+             "",
+             fn x, y -> "#{x} #{y}" end
+           ) ==
+             "this is how you would unword a list of strings "
+  end
 end

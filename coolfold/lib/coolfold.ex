@@ -9,7 +9,7 @@ defmodule Coolfold do
   `f: (A,B) -> B` and returns a value of type `B` by _folding from the left_. This is a tail recursive implementation of left fold which works
   for very big list inputs without stack overflow.
 
-  The accumulator is usually a value that acts an identity for the binary operator `f`, for example, `0` for summing.
+  The accumulator is usually a value that acts as an identity for the binary operator `f`, for example, `0` for summing a list of numbers.
 
   ## Examples
 

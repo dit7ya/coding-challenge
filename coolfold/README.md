@@ -21,8 +21,8 @@ Documentation can be found at [Coolfold — coolfold v0.1.0](https://coding-chal
 ### Benchmarks
 
 Benchmarks can be written at `benchmark.exs` and can be run with
-`mix compile`
 
+`mix compile`
 `mix run benchmark.exs`
 
 A primitive set of benchmarks, comparing the implementations with native Elixir implementations result into the following:
@@ -85,4 +85,5 @@ Native foldr          9.80 K - 1.03x slower +3.20 μs
 ### Tests
 
 Tests and doctests can be run with
+
 `mix test`
